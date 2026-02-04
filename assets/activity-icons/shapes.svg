@@ -1,0 +1,16 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-base { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+    </style>
+  </defs>
+  
+  <g class="icon-base">
+    <!-- Circle -->
+    <circle cx="80" cy="90" r="40" fill="#FF6B6B" rx="40" ry="40"/>
+    <!-- Square -->
+    <rect x="140" y="50" width="80" height="80" rx="8" fill="#4D96FF"/>
+    <!-- Triangle -->
+    <polygon points="128,180 80,240 176,240" fill="#FFD93D"/>
+  </g>
+</svg>

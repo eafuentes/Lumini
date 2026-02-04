@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glowGradient" cx="50%" cy="40%">
+      <stop offset="0%" style="stop-color:#FFF9E6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFE680;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD633;stop-opacity:1" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Glow background -->
+  <circle cx="512" cy="512" r="480" fill="url(#glowGradient)" filter="url(#glow)" opacity="0.8"/>
+  
+  <!-- Main blob/circle -->
+  <circle cx="512" cy="512" r="360" fill="url(#glowGradient)"/>
+  
+  <!-- Left eye -->
+  <circle cx="420" cy="460" r="28" fill="#2D3436"/>
+  
+  <!-- Right eye -->
+  <circle cx="604" cy="460" r="28" fill="#2D3436"/>
+  
+  <!-- Smile -->
+  <path d="M 420 540 Q 512 600 604 540" stroke="#2D3436" stroke-width="24" fill="none" stroke-linecap="round"/>
+  
+  <!-- Sparkle accent top left -->
+  <g transform="translate(280, 250)">
+    <circle cx="0" cy="0" r="16" fill="#FFE680"/>
+    <path d="M -8 -20 L -8 20 M -20 0 L 20 0" stroke="#FFE680" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Sparkle accent top right -->
+  <g transform="translate(740, 260)">
+    <circle cx="0" cy="0" r="12" fill="#FFD633"/>
+    <path d="M -6 -15 L -6 15 M -15 0 L 15 0" stroke="#FFD633" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

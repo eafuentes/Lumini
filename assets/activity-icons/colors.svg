@@ -1,0 +1,17 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-base { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+    </style>
+  </defs>
+  
+  <!-- Three overlapping circles for color mixing -->
+  <g class="icon-base">
+    <!-- Red circle -->
+    <circle cx="90" cy="100" r="50" fill="#FF6B6B" opacity="0.85"/>
+    <!-- Yellow circle -->
+    <circle cx="166" cy="100" r="50" fill="#FFD93D" opacity="0.85"/>
+    <!-- Blue circle -->
+    <circle cx="128" cy="160" r="50" fill="#6BCB77" opacity="0.85"/>
+  </g>
+</svg>

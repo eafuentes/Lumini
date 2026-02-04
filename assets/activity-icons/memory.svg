@@ -1,0 +1,22 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-base { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+    </style>
+  </defs>
+  
+  <g class="icon-base">
+    <!-- Left card -->
+    <rect x="50" y="70" width="70" height="100" rx="8" fill="#FF6B6B" stroke="#2D3436" stroke-width="3"/>
+    <!-- Shine/fold on left card -->
+    <circle cx="75" cy="100" r="15" fill="#FFB3B3" opacity="0.6"/>
+    
+    <!-- Right card -->
+    <rect x="136" y="70" width="70" height="100" rx="8" fill="#4D96FF" stroke="#2D3436" stroke-width="3"/>
+    <!-- Shine/fold on right card -->
+    <circle cx="161" cy="100" r="15" fill="#A3D5FF" opacity="0.6"/>
+    
+    <!-- Connecting element (suggests matching) -->
+    <path d="M 120 130 Q 128 140 136 130" stroke="#FFD93D" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

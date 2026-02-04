@@ -1,0 +1,25 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-base { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+    </style>
+  </defs>
+  
+  <g class="icon-base">
+    <!-- Repeating pattern: alternating squares -->
+    <!-- Row 1 -->
+    <rect x="50" y="50" width="35" height="35" rx="4" fill="#FF6B6B"/>
+    <rect x="100" y="50" width="35" height="35" rx="4" fill="#4D96FF"/>
+    <rect x="150" y="50" width="35" height="35" rx="4" fill="#FF6B6B"/>
+    
+    <!-- Row 2 -->
+    <rect x="50" y="100" width="35" height="35" rx="4" fill="#4D96FF"/>
+    <rect x="100" y="100" width="35" height="35" rx="4" fill="#FF6B6B"/>
+    <rect x="150" y="100" width="35" height="35" rx="4" fill="#4D96FF"/>
+    
+    <!-- Row 3 -->
+    <rect x="50" y="150" width="35" height="35" rx="4" fill="#FF6B6B"/>
+    <rect x="100" y="150" width="35" height="35" rx="4" fill="#4D96FF"/>
+    <rect x="150" y="150" width="35" height="35" rx="4" fill="#FF6B6B"/>
+  </g>
+</svg>

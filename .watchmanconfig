@@ -1,0 +1,21 @@
+{
+  "ignore_dirs": [
+    "node_modules",
+    ".git",
+    ".expo",
+    ".next",
+    ".turbo",
+    "dist",
+    "build",
+    "coverage",
+    ".cache",
+    "tmp",
+    "android",
+    "ios",
+    ".vscode",
+    ".idea"
+  ],
+  "settling_timeout_ms": 10000,
+  "enforce_root_files": [".watchmanconfig"],
+  "watch_limit": 1000
+}

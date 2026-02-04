@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Lumini",
+    "slug": "lumini",
+    "version": "1.0.0",
+    "sdkVersion": "54.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon-app-1024.svg",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/icon-app-1024.svg",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFF9E6"
+    },
+    "ios": {
+      "bundleIdentifier": "com.lumini.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon-app-1024.svg",
+        "backgroundColor": "#FFF9E6"
+      },
+      "package": "com.lumini.app"
+    },
+    "scheme": "lumini",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "plugins": [
+      "expo-audio"
+    ]
+  }
+}

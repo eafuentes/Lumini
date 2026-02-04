@@ -1,0 +1,14 @@
+*.ipa
+*.apk
+*.md
+.DS_Store
+.env
+.env.local
+node_modules/
+.expo/
+.expo-shared/
+dist/
+build/
+.next/
+.turbo/
+coverage/

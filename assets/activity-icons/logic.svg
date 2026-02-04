@@ -1,0 +1,25 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-base { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+    </style>
+  </defs>
+  
+  <g class="icon-base">
+    <!-- Puzzle piece 1 (top-left) -->
+    <rect x="40" y="40" width="80" height="80" rx="8" fill="#FF6B6B"/>
+    <circle cx="120" cy="80" r="14" fill="white"/>
+    
+    <!-- Puzzle piece 2 (top-right) -->
+    <rect x="136" y="40" width="80" height="80" rx="8" fill="#4D96FF"/>
+    <circle cx="136" cy="80" r="14" fill="white"/>
+    
+    <!-- Puzzle piece 3 (bottom-left) -->
+    <rect x="40" y="136" width="80" height="80" rx="8" fill="#6BCB77"/>
+    <circle cx="80" cy="136" r="14" fill="white"/>
+    
+    <!-- Puzzle piece 4 (bottom-right) -->
+    <rect x="136" y="136" width="80" height="80" rx="8" fill="#FFD93D"/>
+    <circle cx="176" cy="136" r="14" fill="white"/>
+  </g>
+</svg>
