@@ -5,18 +5,21 @@
     "version": "1.0.0",
     "sdkVersion": "54.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon-app-1024.svg",
+    "icon": "./assets/icon-app-1024.png",
     "userInterfaceStyle": "light",
     "description": "Solimo - A delightful micro-learning app for kids 3-8 with one engaging activity per day. Voice-accessible, beautifully animated, and designed for parents who want screen time to actually matter.",
     "splash": {
-      "image": "./assets/icon-app-1024.svg",
+      "image": "./assets/icon-app-1024.png",
       "resizeMode": "contain",
       "backgroundColor": "#FFF9E6"
     },
     "ios": {
       "bundleIdentifier": "com.solimo.app",
       "teamId": "473PWD3Y94",
-      "buildNumber": "1"
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
