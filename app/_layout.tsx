@@ -9,10 +9,9 @@ export default function RootLayout() {
     <Stack
       screenOptions={{
         headerShown: false,
-        animationEnabled: true,
       }}
     >
-      <Stack.Screen name="index" options={{ title: 'Lumini' }} />
+      <Stack.Screen name="index" options={{ title: 'Solimo' }} />
       <Stack.Screen name="activity" options={{ title: 'Activity' }} />
     </Stack>
   );

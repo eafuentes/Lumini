@@ -2,10 +2,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AgeBand, Difficulty } from '../types';
 
 const KEYS = {
-  AGE_BAND: 'lumini_ageBand',
-  SOUND_ENABLED: 'lumini_soundEnabled',
-  COMPLETED_DATE: 'lumini_completedDate',
-  ACTIVITY_LEVELS: 'lumini_activityLevels',
+  AGE_BAND: 'solimo_ageBand',
+  SOUND_ENABLED: 'solimo_soundEnabled',
+  COMPLETED_DATE: 'solimo_completedDate',
+  ACTIVITY_LEVELS: 'solimo_activityLevels',
 };
 
 /**
