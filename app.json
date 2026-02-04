@@ -15,6 +15,7 @@
     },
     "ios": {
       "bundleIdentifier": "com.solimo.app",
+      "teamId": "473PWD3Y94",
       "buildNumber": "1"
     },
     "android": {
