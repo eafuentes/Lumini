@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Animated } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { shuffleArray } from '../../lib/gameUtils';
 import { AgeBand } from '../../types';
 import { VoiceButton } from '../VoiceButton';
 import * as Speech from 'expo-speech';
@@ -27,12 +28,13 @@ export const PatternsGame: React.FC<PatternsGameProps> = ({
 }) => {
   const insets = useSafeAreaInsets();
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [questionOrder] = useState(() => shuffleArray([0, 1, 2]));
   const scaleAnim = React.useRef(new Animated.Value(1)).current;
 
   // Auto-speak question when component mounts or question changes
   React.useEffect(() => {
     const speakQuestion = async () => {
-      const q = questions[ageBand][currentQuestion % questions[ageBand].length];
+      const q = questions[ageBand][questionOrder[currentQuestion % questionOrder.length]];
       await Speech.speak(q.text, {
         language: 'en',
         pitch: 1.5, // More playful and fun
@@ -40,7 +42,7 @@ export const PatternsGame: React.FC<PatternsGameProps> = ({
       });
     };
     setTimeout(speakQuestion, 500); // Small delay for component to settle
-  }, [currentQuestion, ageBand]);
+  }, [currentQuestion, ageBand, questionOrder]);
 
   // Stop speech on unmount
   React.useEffect(() => {
@@ -139,7 +141,7 @@ export const PatternsGame: React.FC<PatternsGameProps> = ({
     ],
   };
 
-  const q = questions[ageBand][currentQuestion % questions[ageBand].length];
+  const q = questions[ageBand][questionOrder[currentQuestion % questionOrder.length]];
 
   const handleOptionPress = async (option: PatternOption) => {
     const correct = option.correct;

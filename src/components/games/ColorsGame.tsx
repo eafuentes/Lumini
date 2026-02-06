@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Animated, useWindowDimensions
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AgeBand } from '../../types';
 import { VoiceButton } from '../VoiceButton';
+import { shuffleArray } from '../../lib/gameUtils';
 import * as Speech from 'expo-speech';
 
 interface ColorOption {
@@ -30,11 +31,12 @@ export const ColorsGame: React.FC<ColorsGameProps> = ({
   const insets = useSafeAreaInsets();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const scaleAnim = React.useRef(new Animated.Value(1)).current;
+  const [questionOrder] = useState(() => shuffleArray([0, 1, 2]));
 
   // Auto-speak question when component mounts or question changes
   useEffect(() => {
     const speakQuestion = async () => {
-      const q = questions[ageBand][currentQuestion % questions[ageBand].length];
+      const q = questions[ageBand][questionOrder[currentQuestion % questionOrder.length]];
       await Speech.speak(q.text, {
         language: 'en',
         pitch: 1.5, // More playful and fun
@@ -42,7 +44,7 @@ export const ColorsGame: React.FC<ColorsGameProps> = ({
       });
     };
     setTimeout(speakQuestion, 500); // Small delay for component to settle
-  }, [currentQuestion, ageBand]);
+  }, [currentQuestion, ageBand, questionOrder]);
   // Stop speech on unmount
   React.useEffect(() => {
     return () => {
@@ -113,7 +115,7 @@ export const ColorsGame: React.FC<ColorsGameProps> = ({
     ],
   };
 
-  const q = questions[ageBand][currentQuestion % questions[ageBand].length];
+  const q = questions[ageBand][questionOrder[currentQuestion % questionOrder.length]];
   const selectedOption = q.options.find((opt) => opt.correct);
 
   const handleOptionPress = async (option: ColorOption) => {

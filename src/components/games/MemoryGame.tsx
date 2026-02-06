@@ -59,7 +59,7 @@ export const MemoryGame: React.FC<MemoryGameProps> = ({
 
   const initializeGame = () => {
     let numPairs = 0;
-    if (ageBand === '3-4') numPairs = 3;
+    if (ageBand === '3-4') numPairs = 2; // Reduced from 3 for lower cognitive load
     else if (ageBand === '5-6') numPairs = 4;
     else numPairs = 6;
 

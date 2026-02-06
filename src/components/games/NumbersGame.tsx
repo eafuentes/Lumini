@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AgeBand } from '../../types';
 import Svg, { Circle as SvgCircle } from 'react-native-svg';
 import { VoiceButton } from '../VoiceButton';
+import { shuffleArray } from '../../lib/gameUtils';
 import * as Speech from 'expo-speech';
 import { Animated } from 'react-native';
 
@@ -21,12 +22,13 @@ export const NumbersGame: React.FC<NumbersGameProps> = ({
   onWrong,
 }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [questionOrder] = useState(() => shuffleArray([0, 1, 2]));
   const scaleAnim = React.useRef(new Animated.Value(1)).current;
 
   // Auto-speak question when component mounts or question changes
   React.useEffect(() => {
     const speakQuestion = async () => {
-      const q = questions[ageBand][currentQuestion % questions[ageBand].length];
+      const q = questions[ageBand][questionOrder[currentQuestion % questionOrder.length]];
       await Speech.speak(q.text, {
         language: 'en',
         pitch: 1.5, // More playful and fun
@@ -34,7 +36,7 @@ export const NumbersGame: React.FC<NumbersGameProps> = ({
       });
     };
     setTimeout(speakQuestion, 500); // Small delay for component to settle
-  }, [currentQuestion, ageBand]);
+  }, [currentQuestion, ageBand, questionOrder]);
 
   // Stop speech on unmount
   React.useEffect(() => {
@@ -112,7 +114,7 @@ export const NumbersGame: React.FC<NumbersGameProps> = ({
     ],
   };
 
-  const q = questions[ageBand][currentQuestion % questions[ageBand].length];
+  const q = questions[ageBand][questionOrder[currentQuestion % questionOrder.length]];
   const insets = useSafeAreaInsets();
 
   const handleOptionPress = async (option: (typeof q.options)[0]) => {

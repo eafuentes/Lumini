@@ -141,7 +141,7 @@ export default function HomeScreen() {
       "Let's have some fun learning today!",
       "One bright activity, plenty of fun!",
       "Ready for an adventure?",
-      "Learning is fun with Lumini!",
+      "Learning is fun with Solimo!",
       "Let's make learning magical!",
     ];
     return messages[Math.floor(Math.random() * messages.length)];
@@ -422,7 +422,7 @@ export default function HomeScreen() {
     return (
       <View style={styles.container}>
         <View style={styles.mainContent}>
-          <Text style={{ fontSize: 20, color: '#666' }}>Loading Lumini...</Text>
+          <Text style={{ fontSize: 20, color: '#666' }}>Loading Solimo...</Text>
         </View>
       </View>
     );
