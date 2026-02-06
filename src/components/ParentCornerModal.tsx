@@ -152,7 +152,11 @@ export const ParentCornerModal: React.FC<ParentCornerModalProps> = ({ visible, o
 
   return (
     <Modal visible={visible} transparent animationType="none">
-      <View style={styles.overlay}>
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={onClose}
+        style={styles.overlay}
+      >
         <Animated.View
           style={[
             styles.modalContent,
@@ -167,6 +171,8 @@ export const ParentCornerModal: React.FC<ParentCornerModalProps> = ({ visible, o
               ],
             },
           ]}
+          onStartShouldSetResponder={() => true}
+          onResponderTerminationRequest={() => false}
         >
           <Text style={styles.title}>Parent Corner</Text>
 
@@ -230,7 +236,7 @@ export const ParentCornerModal: React.FC<ParentCornerModalProps> = ({ visible, o
             <Text style={styles.closeButtonText}>Close</Text>
           </TouchableOpacity>
         </Animated.View>
-      </View>
+      </TouchableOpacity>
     </Modal>
   );
 };

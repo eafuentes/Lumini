@@ -26,7 +26,6 @@ export default function HomeScreen() {
   const [activityName, setActivityName] = useState('');
   const [parentCornerVisible, setParentCornerVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [lockPressStart, setLockPressStart] = useState<number>(0);
   const [currentAgeBand, setCurrentAgeBand] = useState<AgeBand>('3-4');
   const [showAgeSelector, setShowAgeSelector] = useState(false);
   const [soundEnabled, setSoundEnabledState] = useState(true);
@@ -153,16 +152,8 @@ export default function HomeScreen() {
     setShowAgeSelector(false);
   };
 
-  const handleLockPressIn = () => {
-    setLockPressStart(Date.now());
-  };
-
-  const handleLockPressOut = () => {
-    const pressDuration = Date.now() - lockPressStart;
-    // 2 second press = 2000ms
-    if (pressDuration >= 2000) {
-      setParentCornerVisible(true);
-    }
+  const handleSettingsPress = () => {
+    setParentCornerVisible(true);
   };
 
   const styles = StyleSheet.create({
@@ -176,10 +167,10 @@ export default function HomeScreen() {
       paddingRight: 16,
       paddingBottom: 12,
     },
-    lockButton: {
+    settingsButton: {
       padding: 12,
       borderRadius: 50,
-      backgroundColor: 'rgba(255, 255, 255, 0.6)',
+      backgroundColor: 'rgba(255, 255, 255, 0.7)',
     },
     mainContent: {
       flex: 1,
@@ -430,16 +421,15 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Top section with lock icon */}
+      {/* Top section with settings icon */}
       <View style={styles.topSection}>
         <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
           <TouchableOpacity
-            onPressIn={handleLockPressIn}
-            onPressOut={handleLockPressOut}
-            style={styles.lockButton}
+            onPress={handleSettingsPress}
+            style={styles.settingsButton}
             activeOpacity={0.6}
           >
-            <Text style={{ fontSize: 32 }}>🔒</Text>
+            <Text style={{ fontSize: 28 }}>⚙️</Text>
           </TouchableOpacity>
         </View>
       </View>
